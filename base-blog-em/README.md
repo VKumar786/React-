@@ -1,8 +1,18 @@
-# React + Vite
+# Slate -> expired
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Stale Time
 
-Currently, two official plugins are available:
+- if user navigate back to same page then it will not refetch after x ms of time
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# gcTime 
+
+-
+
+# SWR -> Stale Well and Revalidate made by vercel. Fetching in background
+
+const { data, isLoading, isError, error } = useQuery({
+  queryKey: ["posts"],
+  queryFn: fetchPosts,
+  // staleTime: 1000,
+  staleTime: 365 * 24 * 60 * 60 * 1000,
+});
