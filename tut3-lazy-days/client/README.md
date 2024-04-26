@@ -1,8 +1,15 @@
-# React + Vite
+# Global Loading
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Fetching
+const isFetching = useIsFetching();
 
-Currently, two official plugins are available:
+# Error 
+export const queryClient = new QueryClient({
+  queryCache: new QueryCache({
+    onError: (err) => {
+      errorHandler(err.message);
+    },
+  }),
+});
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Prefetch & Pagination
