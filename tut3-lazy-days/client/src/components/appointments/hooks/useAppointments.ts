@@ -75,6 +75,9 @@ export function useAppointments() {
   const { data: appointments = fallback } = useQuery({
     queryKey: [queryKeys.appointments, monthYear.year, monthYear.month],
     queryFn: () => getAppointments(monthYear.year, monthYear.month),
+    staleTime: 0,
+    gcTime: 30000,
+    refetchOnWindowFocus: true,
   });
 
   /** ****************** END 3: useQuery  ******************************* */
@@ -90,6 +93,9 @@ export function useAppointments() {
       ],
       queryFn: () => getAppointments(nextMonthYear.year, nextMonthYear.month),
       select: (data) => selectFn(data, showAll),
+      staleTime: 0,
+      gcTime: 30000,
+      refetchOnWindowFocus: true,
     });
   }, [monthYear, queryClient]);
 
