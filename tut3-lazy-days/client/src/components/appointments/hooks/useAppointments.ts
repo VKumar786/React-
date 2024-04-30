@@ -78,6 +78,7 @@ export function useAppointments() {
     staleTime: 0,
     gcTime: 30000,
     refetchOnWindowFocus: true,
+    refetchInterval: 60000,
   });
 
   /** ****************** END 3: useQuery  ******************************* */
